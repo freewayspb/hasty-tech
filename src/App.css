@@ -1,5 +1,5 @@
 .App {
-  background-color: #282c34;
+  background-color: #fff;
   text-align: center;
   min-height: 100vh;
 }
@@ -13,15 +13,7 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-content {
+  text-align: right;
+  background-color: #fff;
 }

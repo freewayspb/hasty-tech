@@ -1,3 +1,5 @@
 import { combineReducers } from 'redux';
 
-export default combineReducers({});
+import cryptoCurrency from './cryptocurrency/reducer';
+
+export default combineReducers({cryptoCurrency});
