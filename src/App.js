@@ -16,15 +16,15 @@ import Content from './components/Content';
 
 // create the saga middleware
 const sagaMiddleware = createSagaMiddleware();
+const middleware = applyMiddleware(sagaMiddleware);
 
 // dev tools middleware
-const reduxDevTools =
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+const reduxCompose = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 // create a redux store with our reducer above and middleware
 let store = createStore(
   rootReducer,
-  compose(applyMiddleware(sagaMiddleware), reduxDevTools)
+  reduxCompose(middleware)
 );
 
 // run the saga
