@@ -9,9 +9,11 @@ import './style.css';
 
 const Content = ({currencyList, currencyLoading, getCurrency}) => {
   const [limit, setLimit] = useState('100');
+
   useEffect(() => {
     getCurrency({limit, sort: 'market_cap'})
   }, [limit]);
+
   return (
     <>
       <Select
@@ -26,7 +28,7 @@ const Content = ({currencyList, currencyLoading, getCurrency}) => {
         <Select.Option value="5000">All</Select.Option>
       </Select>
       <Switch>
-        <Route path="/liquidity" component={Liquidity} />
+        <Route path="/liquidity" render={() => <Liquidity data={currencyList} />} />
         <Route path="/" render={() => <MarketTable
           bordered
           data={currencyList}
