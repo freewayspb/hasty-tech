@@ -86,6 +86,7 @@ const MarketTable = ({ loading, data }) => {
         loading={loading}
         dataSource={data}
         rowKey={row => row.id}
+        size="small"
       />
   )
 };
