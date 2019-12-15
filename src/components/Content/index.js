@@ -7,12 +7,12 @@ import MarketTable from "../MarketTable";
 import Liquidity from "../Liquidity";
 import './style.css';
 
-const Content = ({currencyList, currencyLoading, getCurrency}) => {
+const Content = ({ currencyList, currencyLoading, getCurrency }) => {
   const [limit, setLimit] = useState('100');
 
   useEffect(() => {
     getCurrency({limit, sort: 'market_cap'})
-  }, [limit]);
+  }, [limit, getCurrency]);
 
   return (
     <>
